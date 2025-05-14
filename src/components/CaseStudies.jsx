@@ -16,10 +16,7 @@ function CaseStudies() {
         <div className="row">
           <div className="col-md-6 col-lg-3 mb-4 reveal">
             <div className="project-card">
-              <img
-                src="https://via.placeholder.com/600x600"
-                alt="Service Site"
-              />
+              <img src="soon-svg.svg" alt="Service Site" />
               <div className="project-content">
                 <h3 className="h5 mb-2">Service Website</h3>
                 <p className="small mb-3">Dental Clinic Redesign</p>
@@ -35,10 +32,7 @@ function CaseStudies() {
 
           <div className="col-md-6 col-lg-3 mb-4 reveal reveal-delay-1">
             <div className="project-card">
-              <img
-                src="https://via.placeholder.com/600x600"
-                alt="Interactive Game"
-              />
+              <img src="soon-svg.svg" alt="Interactive Game" />
               <div className="project-content">
                 <h3 className="h5 mb-2">Interactive Game</h3>
                 <p className="small mb-3">Web-Based Experience</p>
@@ -51,10 +45,7 @@ function CaseStudies() {
 
           <div className="col-md-6 col-lg-3 mb-4 reveal reveal-delay-2">
             <div className="project-card">
-              <img
-                src="https://via.placeholder.com/600x600"
-                alt="E-Commerce Platform"
-              />
+              <img src="soon-svg.svg" alt="E-Commerce Platform" />
               <div className="project-content">
                 <h3 className="h5 mb-2">E-Commerce</h3>
                 <p className="small mb-3">Shopping Experience</p>
@@ -70,10 +61,7 @@ function CaseStudies() {
 
           <div className="col-md-6 col-lg-3 mb-4 reveal reveal-delay-3">
             <div className="project-card">
-              <img
-                src="https://via.placeholder.com/600x600"
-                alt="Analytics Dashboard"
-              />
+              <img src="soon-svg.svg" alt="Analytics Dashboard" />
               <div className="project-content">
                 <h3 className="h5 mb-2">Analytics Dashboard</h3>
                 <p className="small mb-3">Data Visualization</p>

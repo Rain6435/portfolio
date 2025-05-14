@@ -8,8 +8,6 @@ import EcommercePage from "../pages/Ecommerce";
 import AnalyticsPage from "../pages/Analytics";
 import NotFoundPage from "../pages/NotFound";
 
-const basePath = "/portfolio";
-
 // Create a root route
 const rootRoute = new createRootRoute({
   component: RootLayout,
@@ -18,37 +16,37 @@ const rootRoute = new createRootRoute({
 // Define routes
 const indexRoute = new createRoute({
   getParentRoute: () => rootRoute,
-  path: basePath + "/",
+  path: "/",
   component: HomePage,
 });
 
 const serviceSiteRoute = new createRoute({
   getParentRoute: () => rootRoute,
-  path: basePath + "/projects/service-site",
+  path: "/projects/service-site",
   component: ServiceSitePage,
 });
 
 const gameRoute = new createRoute({
   getParentRoute: () => rootRoute,
-  path: basePath + "/projects/game",
+  path: "/projects/game",
   component: GamePage,
 });
 
 const ecommerceRoute = new createRoute({
   getParentRoute: () => rootRoute,
-  path: basePath + "/projects/ecommerce",
+  path: "/projects/ecommerce",
   component: EcommercePage,
 });
 
 const analyticsRoute = new createRoute({
   getParentRoute: () => rootRoute,
-  path: basePath + "/projects/analytics",
+  path: "/projects/analytics",
   component: AnalyticsPage,
 });
 
 const notFoundRoute = new createRoute({
   getParentRoute: () => rootRoute,
-  path: basePath + "*",
+  path: "*",
   component: NotFoundPage,
 });
 

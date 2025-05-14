@@ -7,7 +7,7 @@ import { resolve } from "node:path";
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [viteReact(), tailwindcss()],
-  base: "/portfolio/",
+  base: "/",
   test: {
     globals: true,
     environment: "jsdom",

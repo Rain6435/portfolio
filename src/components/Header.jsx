@@ -1,62 +1,79 @@
-import { useState, useEffect } from 'react'
-import { Link, useNavigate, useLocation } from '@tanstack/react-router'
+import { useState, useEffect } from "react";
+import { Link, useNavigate, useLocation } from "@tanstack/react-router";
 
 function Header({ hideContactButton = false }) {
-  const [scrolled, setScrolled] = useState(false)
-  const navigate = useNavigate()
-  const location = useLocation()
+  const [scrolled, setScrolled] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
+    // Check if device is mobile
+    const checkMobile = () => {
+      const isMobileView = window.innerWidth <= 768;
+      setIsMobile(isMobileView);
+    };
+
+    // Initial check
+    checkMobile();
+
+    // Listen for window resize
+    window.addEventListener("resize", checkMobile);
+
+    // Handle scroll for navbar background
     const handleScroll = () => {
-      const offset = window.scrollY
+      const offset = window.scrollY;
       if (offset > 50) {
-        setScrolled(true)
+        setScrolled(true);
       } else {
-        setScrolled(false)
+        setScrolled(false);
       }
-    }
+    };
 
-    window.addEventListener('scroll', handleScroll)
+    window.addEventListener("scroll", handleScroll);
+
     return () => {
-      window.removeEventListener('scroll', handleScroll)
-    }
-  }, [])
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", checkMobile);
+    };
+  }, []);
 
-  // Simplified navigation handler
+  // Navigation handler
   const handleNavigation = (e, path) => {
-    e.preventDefault()
-    
-    // If we're already on the homepage and clicking a section link
-    if (location.pathname === '/' && path.startsWith('#')) {
-      // Smooth scroll to the section
-      const element = document.querySelector(path)
+    e.preventDefault();
+
+    if (location.pathname === "/" && path.startsWith("#")) {
+      const element = document.querySelector(path);
       if (element) {
-        element.scrollIntoView({ behavior: 'smooth' })
+        element.scrollIntoView({ behavior: "smooth" });
       }
     } else {
-      // This is navigation to a new route - let ScrollToTop handle scrolling
-      navigate({ to: path })
+      navigate({ to: path });
     }
-  }
+  };
 
   return (
-    <nav className={`navbar navbar-expand-lg navbar-dark fixed-top ${scrolled ? 'scrolled' : ''}`}>
+    <nav
+      className={`navbar navbar-expand-lg navbar-dark fixed-top ${
+        scrolled ? "scrolled" : ""
+      } ${isMobile ? "navbar-mobile" : ""}`}
+    >
       <div className="container">
-        <Link 
-          to="/" 
+        <Link
+          to="/"
           className="navbar-brand"
           onClick={(e) => {
             e.preventDefault();
-            navigate({ to: '/' });
+            navigate({ to: "/" });
           }}
         >
           <span className="fw-bold">Mohammed.</span>
-          <span className="d-none d-md-inline">Elhasnaoui</span>
+          <span className="d-md-inline">Elhasnaoui</span>
         </Link>
-        <button 
-          className="navbar-toggler border-0" 
-          type="button" 
-          data-bs-toggle="collapse" 
+        <button
+          className="navbar-toggler border-0"
+          type="button"
+          data-bs-toggle="collapse"
           data-bs-target="#navbarNav"
           aria-controls="navbarNav"
           aria-expanded="false"
@@ -70,23 +87,53 @@ function Header({ hideContactButton = false }) {
             {!hideContactButton && (
               <>
                 <li className="nav-item">
-                  <a className="nav-link px-3" href="#about" onClick={(e) => handleNavigation(e, '#about')}>About</a>
+                  <a
+                    className="nav-link px-3"
+                    href="#about"
+                    onClick={(e) => handleNavigation(e, "#about")}
+                  >
+                    About
+                  </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link px-3" href="#experience" onClick={(e) => handleNavigation(e, '#experience')}>Experience</a>
+                  <a
+                    className="nav-link px-3"
+                    href="#experience"
+                    onClick={(e) => handleNavigation(e, "#experience")}
+                  >
+                    Experience
+                  </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link px-3" href="#work" onClick={(e) => handleNavigation(e, '#work')}>How I Work</a>
+                  <a
+                    className="nav-link px-3"
+                    href="#work"
+                    onClick={(e) => handleNavigation(e, "#work")}
+                  >
+                    How I Work
+                  </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link px-3" href="#projects" onClick={(e) => handleNavigation(e, '#projects')}>Projects</a>
+                  <a
+                    className="nav-link px-3"
+                    href="#projects"
+                    onClick={(e) => handleNavigation(e, "#projects")}
+                  >
+                    Projects
+                  </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link px-3" href="#contact" onClick={(e) => handleNavigation(e, '#contact')}>Contact</a>
+                  <a
+                    className="nav-link px-3"
+                    href="#contact"
+                    onClick={(e) => handleNavigation(e, "#contact")}
+                  >
+                    Contact
+                  </a>
                 </li>
                 <li className="nav-item ms-lg-3 mt-3 mt-lg-0">
-                  <a 
-                    href="mailto:melhas134@gmail.com" 
+                  <a
+                    href="mailto:melhas134@gmail.com"
                     className="btn btn-gradient"
                   >
                     Let's Talk
@@ -97,12 +144,12 @@ function Header({ hideContactButton = false }) {
             {/* Always show a home button on error page */}
             {hideContactButton && (
               <li className="nav-item">
-                <Link 
-                  to="/" 
+                <Link
+                  to="/"
                   className="btn btn-gradient"
                   onClick={(e) => {
                     e.preventDefault();
-                    navigate({ to: '/' });
+                    navigate({ to: "/" });
                   }}
                 >
                   <i className="bi bi-house-door me-2"></i> Go Home
@@ -113,7 +160,7 @@ function Header({ hideContactButton = false }) {
         </div>
       </div>
     </nav>
-  )
+  );
 }
 
-export default Header
+export default Header;
