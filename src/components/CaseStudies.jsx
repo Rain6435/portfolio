@@ -120,7 +120,7 @@ function CaseStudies() {
 
           <div className="col-lg-6 mt-4 mt-lg-0 reveal reveal-delay-1 d-flex flex-column align-items-center">
             <img
-              src="Logo(2).png"
+              src="/Logo(2).png"
               alt="Schedulo Project"
               className="img-fluid rounded-4 shadow"
             />
