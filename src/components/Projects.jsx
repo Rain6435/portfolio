@@ -29,7 +29,7 @@ function Projects() {
             </a>
           </div>
           <img
-            src="Logo(1).png"
+            src="/Logo(1).png"
             alt="Schedulo Project"
             className="img-fluid rounded-full shadow"
           />
