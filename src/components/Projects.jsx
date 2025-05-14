@@ -29,7 +29,7 @@ function Projects() {
             </a>
           </div>
           <img
-            src="https://via.placeholder.com/800x500"
+            src="Logo(1).png"
             alt="Schedulo Project"
             className="img-fluid rounded-full shadow"
           />

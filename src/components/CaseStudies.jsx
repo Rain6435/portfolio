@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 
 function CaseStudies() {
   return (
-    <section id="projects" className="section-padding bg-light">
+    <section id="projects" className="section-padding bg-light ">
       <div className="container">
         <div className="row mb-5">
           <div className="col-12 reveal">
@@ -125,25 +125,18 @@ function CaseStudies() {
                   >
                     View Project
                   </a>
-                  <a
-                    href="https://github.com/Rain6435"
-                    className="btn btn-outline"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Source Code
-                  </a>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="col-lg-6 mt-4 mt-lg-0 reveal reveal-delay-1">
+          <div className="col-lg-6 mt-4 mt-lg-0 reveal reveal-delay-1 d-flex flex-column align-items-center">
             <img
-              src="https://via.placeholder.com/800x500"
+              src="Logo(1).png"
               alt="Schedulo Project"
               className="img-fluid rounded-4 shadow"
             />
+            <h1 className="my-2 text-center">Plan your academic journey!</h1>
           </div>
         </div>
       </div>
