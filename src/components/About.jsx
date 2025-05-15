@@ -35,10 +35,38 @@ function About() {
                     Languages & Frameworks
                   </h4>
                   <div>
-                    <span className="skill-badge">PHP/Laravel</span>
-                    <span className="skill-badge">Python/Flask</span>
-                    <span className="skill-badge">TypeScript/React</span>
-                    <span className="skill-badge">Vue.js</span>
+                    <span className="skill-badge">
+                      <img
+                        src="https://cdn.worldvectorlogo.com/logos/laravel-2.svg"
+                        alt="Laravel"
+                        className="tech-icon me-1"
+                      />
+                      PHP/Laravel
+                    </span>
+                    <span className="skill-badge">
+                      <img
+                        src="https://cdn.worldvectorlogo.com/logos/python-5.svg"
+                        alt="Python"
+                        className="tech-icon me-1"
+                      />
+                      Python/Flask
+                    </span>
+                    <span className="skill-badge">
+                      <img
+                        src="https://cdn.worldvectorlogo.com/logos/react-2.svg"
+                        alt="React"
+                        className="tech-icon me-1"
+                      />
+                      TypeScript/React
+                    </span>
+                    <span className="skill-badge">
+                      <img
+                        src="https://cdn.worldvectorlogo.com/logos/vue-9.svg"
+                        alt="Vue.js"
+                        className="tech-icon me-1"
+                      />
+                      Vue.js
+                    </span>
                   </div>
                 </div>
 
@@ -47,10 +75,30 @@ function About() {
                     Cloud & DevOps
                   </h4>
                   <div>
-                    <span className="skill-badge">AWS (EC2, RDS, S3)</span>
-                    <span className="skill-badge">Docker</span>
-                    <span className="skill-badge">Proxmox</span>
-                    <span className="skill-badge">CI/CD</span>
+                    <span className="skill-badge">
+                      <img
+                        src="https://cdn.worldvectorlogo.com/logos/aws-2.svg"
+                        alt="AWS"
+                        className="tech-icon me-1"
+                      />
+                      AWS (EC2, RDS, S3)
+                    </span>
+                    <span className="skill-badge">
+                      <img
+                        src="https://cdn.worldvectorlogo.com/logos/docker.svg"
+                        alt="Docker"
+                        className="tech-icon me-1"
+                      />
+                      Docker
+                    </span>
+                    <span className="skill-badge">
+                      <img
+                        src="https://cdn.worldvectorlogo.com/logos/gitlab-3.svg"
+                        alt="CI/CD"
+                        className="tech-icon me-1"
+                      />
+                      CI/CD
+                    </span>
                   </div>
                 </div>
 
@@ -59,10 +107,30 @@ function About() {
                     Web Technologies
                   </h4>
                   <div>
-                    <span className="skill-badge">Inertia.js</span>
-                    <span className="skill-badge">Livewire</span>
-                    <span className="skill-badge">Webpack/Babel</span>
-                    <span className="skill-badge">SSR</span>
+                    <span className="skill-badge">
+                      <img
+                        src="https://avatars.githubusercontent.com/u/47703742?s=200&v=4"
+                        alt="Inertia.js"
+                        className="tech-icon me-1"
+                      />
+                      Inertia.js
+                    </span>
+                    <span className="skill-badge">
+                      <img
+                        src="https://laravel-livewire.com/img/twitter.png"
+                        alt="Livewire"
+                        className="tech-icon me-1"
+                      />
+                      Livewire
+                    </span>
+                    <span className="skill-badge">
+                      <img
+                        src="https://cdn.worldvectorlogo.com/logos/webpack-icon.svg"
+                        alt="Webpack"
+                        className="tech-icon me-1"
+                      />
+                      Webpack/Babel
+                    </span>
                   </div>
                 </div>
 
@@ -71,9 +139,22 @@ function About() {
                     Tools & Databases
                   </h4>
                   <div>
-                    <span className="skill-badge">Wordpress</span>
-                    <span className="skill-badge">MySQL/SQLite/T-SQL</span>
-                    <span className="skill-badge">Active Directory</span>
+                    <span className="skill-badge">
+                      <img
+                        src="https://cdn.worldvectorlogo.com/logos/wordpress-icon-1.svg"
+                        alt="WordPress"
+                        className="tech-icon me-1"
+                      />
+                      WordPress
+                    </span>
+                    <span className="skill-badge">
+                      <img
+                        src="https://cdn.worldvectorlogo.com/logos/microsoft-5.svg"
+                        alt="Active Directory"
+                        className="tech-icon me-1"
+                      />
+                      Active Directory
+                    </span>
                   </div>
                 </div>
               </div>

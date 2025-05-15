@@ -16,7 +16,10 @@ function CaseStudies() {
         <div className="row">
           <div className="col-md-6 col-lg-3 mb-4 reveal">
             <div className="project-card">
-              <img src="soon-svg.svg" alt="Service Site" />
+              <img
+                src={`${import.meta.env.BASE_URL}soon-svg.svg`}
+                alt="Service Site"
+              />
               <div className="project-content">
                 <h3 className="h5 mb-2">Service Website</h3>
                 <p className="small mb-3">Dental Clinic Redesign</p>
@@ -32,7 +35,10 @@ function CaseStudies() {
 
           <div className="col-md-6 col-lg-3 mb-4 reveal reveal-delay-1">
             <div className="project-card">
-              <img src="soon-svg.svg" alt="Interactive Game" />
+              <img
+                src={`${import.meta.env.BASE_URL}soon-svg.svg`}
+                alt="Interactive Game"
+              />
               <div className="project-content">
                 <h3 className="h5 mb-2">Interactive Game</h3>
                 <p className="small mb-3">Web-Based Experience</p>
@@ -45,7 +51,10 @@ function CaseStudies() {
 
           <div className="col-md-6 col-lg-3 mb-4 reveal reveal-delay-2">
             <div className="project-card">
-              <img src="soon-svg.svg" alt="E-Commerce Platform" />
+              <img
+                src={`${import.meta.env.BASE_URL}soon-svg.svg`}
+                alt="E-Commerce Platform"
+              />
               <div className="project-content">
                 <h3 className="h5 mb-2">E-Commerce</h3>
                 <p className="small mb-3">Shopping Experience</p>
@@ -61,7 +70,10 @@ function CaseStudies() {
 
           <div className="col-md-6 col-lg-3 mb-4 reveal reveal-delay-3">
             <div className="project-card">
-              <img src="soon-svg.svg" alt="Analytics Dashboard" />
+              <img
+                src={`${import.meta.env.BASE_URL}soon-svg.svg`}
+                alt="Analytics Dashboard"
+              />
               <div className="project-content">
                 <h3 className="h5 mb-2">Analytics Dashboard</h3>
                 <p className="small mb-3">Data Visualization</p>
@@ -120,7 +132,7 @@ function CaseStudies() {
 
           <div className="col-lg-6 mt-4 mt-lg-0 reveal reveal-delay-1 d-flex flex-column align-items-center">
             <img
-              src="/Logo(2).png"
+              src={`${import.meta.env.BASE_URL}Logo(2).png`}
               alt="Schedulo Project"
               className="img-fluid rounded-4 shadow"
             />

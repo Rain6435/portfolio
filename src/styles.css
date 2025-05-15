@@ -958,3 +958,298 @@ button,
     display: none !important;
   }
 }
+
+.tech-icon {
+  width: 18px;
+  height: 18px;
+  vertical-align: -0.125em;
+  display: inline-block;
+  object-fit: contain;
+  transition: filter 0.3s ease;
+}
+
+.skill-badge {
+  display: inline-flex;
+  align-items: center;
+  background-color: rgba(139, 92, 246, 0.15);
+  color: var(--primary-color);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  border-radius: 50px;
+  padding: 0.4rem 1rem;
+  font-weight: 500;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+}
+
+.skill-badge:hover {
+  background-color: var(--primary-color);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.skill-badge:hover .tech-icon {
+  filter: brightness(0) invert(1);
+}
+
+/* Timeline icon styles - add to your CSS file */
+
+.timeline-icon {
+  position: absolute;
+  left: -3rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    135deg,
+    var(--primary-light),
+    var(--primary-dark)
+  );
+  color: white;
+  font-size: 18px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+
+.timeline-item:hover .timeline-icon {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    var(--primary-color),
+    var(--accent-color)
+  );
+}
+
+.education-icon {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: linear-gradient(
+    135deg,
+    var(--primary-light),
+    var(--accent-light)
+  );
+  color: white;
+  font-size: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.sticky-sidebar .card:hover .education-icon {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Process Card & Icon Styles - Add to your CSS */
+
+/* Updated Process Card Styles */
+.process-card {
+  position: relative;
+  padding: 2rem 2rem 2rem 4rem;
+  border-radius: 12px;
+  background-color: white;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  overflow: visible;
+  z-index: 1;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.process-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Process Icon Container */
+.process-icon-container {
+  position: absolute;
+  top: 1.5rem;
+  left: -1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Process Icon */
+.process-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    135deg,
+    var(--primary-light),
+    var(--primary-dark)
+  );
+  color: white;
+  font-size: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  z-index: 2;
+  transition: transform 0.3s ease;
+}
+
+.process-card:hover .process-icon {
+  transform: scale(1.1);
+}
+
+/* Process Step Number */
+.process-step {
+  position: absolute;
+  top: -0.5rem;
+  right: -0.5rem;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: var(--accent-color);
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 3;
+}
+
+/* Process Card Content */
+.process-content {
+  padding-left: 0.5rem;
+}
+
+/* Connected line between process cards */
+.process-card::before {
+  content: "";
+  position: absolute;
+  top: 4rem;
+  left: -1.25rem;
+  width: 2px;
+  height: calc(100% + 1.5rem);
+  background: linear-gradient(
+    to bottom,
+    var(--primary-color),
+    var(--accent-color)
+  );
+  z-index: -1;
+}
+
+.process-card:last-child::before {
+  display: none;
+}
+
+/* Project styles - add to your CSS file */
+
+/* Project Icon */
+.project-icon {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+/* Feature items */
+.project-features {
+  margin-bottom: 1.5rem;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.feature-item i {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--primary-light), var(--primary-dark));
+  color: white;
+  border-radius: 50%;
+  margin-right: 0.75rem;
+  font-size: 12px;
+}
+
+/* Project image container */
+.project-image-container {
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-image-container:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.project-image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  padding: 2rem;
+}
+
+.project-image-container:hover .project-image-overlay {
+  opacity: 1;
+}
+
+.project-overlay-icons {
+  display: flex;
+  gap: 1rem;
+}
+
+.overlay-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  border-radius: 50%;
+  backdrop-filter: blur(4px);
+  transition: transform 0.3s ease;
+}
+
+.project-image-container:hover .overlay-icon {
+  transform: translateY(0);
+}
+
+.overlay-icon:nth-child(1) {
+  transform: translateY(20px);
+  transition-delay: 0.1s;
+}
+
+.overlay-icon:nth-child(2) {
+  transform: translateY(20px);
+  transition-delay: 0.2s;
+}
+
+.overlay-icon:nth-child(3) {
+  transform: translateY(20px);
+  transition-delay: 0.3s;
+}

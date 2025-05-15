@@ -29,24 +29,7 @@ function Contact() {
               </div>
             </div>
           </div>
-          
-          <div className="col-md-4 mb-4 reveal reveal-delay-1">
-            <div className="card h-100">
-              <div className="card-body p-4 text-center">
-                <div className="rounded-circle mx-auto d-flex align-items-center justify-content-center mb-4" 
-                  style={{ 
-                    width: '80px', 
-                    height: '80px', 
-                    background: 'linear-gradient(135deg, var(--primary-light), var(--primary-dark))'
-                  }}>
-                  <i className="bi bi-telephone-fill text-white fs-3"></i>
-                </div>
-                <h3 className="h5 mb-3">Call Me</h3>
-                <p className="mb-3">Available weekdays from 9am to 5pm EST</p>
-                <a href="tel:8193195572" className="btn btn-outline">(819) 319-5572</a>
-              </div>
-            </div>
-          </div>
+        
           
           <div className="col-md-4 mb-4 reveal reveal-delay-2">
             <div className="card h-100">

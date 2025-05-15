@@ -113,11 +113,6 @@ function Footer() {
               <li className="mb-2 text-white-50">
                 <i className="bi bi-geo-alt me-2"></i> Gatineau, Quebec
               </li>
-              <li className="mb-2">
-                <a href="tel:8193195572" className="text-white-50 text-decoration-none">
-                  <i className="bi bi-telephone me-2"></i> (819) 319-5572
-                </a>
-              </li>
               <li>
                 <a href="mailto:melhas134@gmail.com" className="text-white-50 text-decoration-none">
                   <i className="bi bi-envelope me-2"></i> melhas134@gmail.com

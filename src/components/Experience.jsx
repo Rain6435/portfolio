@@ -12,7 +12,9 @@ function Experience() {
           <div className="col-lg-8 reveal">
             <div className="timeline">
               <div className="timeline-item">
-                <div className="timeline-dot "></div>
+                <div className="timeline-icon">
+                  <i className="bi bi-code-square"></i>
+                </div>
                 <div className="card mb-4">
                   <div className="card-body p-4">
                     <div className="d-flex justify-content-between align-items-center mb-3">
@@ -31,7 +33,9 @@ function Experience() {
               </div>
               
               <div className="timeline-item">
-                <div className="timeline-dot"></div>
+                <div className="timeline-icon">
+                  <i className="bi bi-pc-display"></i>
+                </div>
                 <div className="card mb-4">
                   <div className="card-body p-4">
                     <h3 className="h5 mb-3">Information Technology Intern</h3>
@@ -47,7 +51,9 @@ function Experience() {
               </div>
               
               <div className="timeline-item">
-                <div className="timeline-dot"></div>
+                <div className="timeline-icon">
+                  <i className="bi bi-people"></i>
+                </div>
                 <div className="card">
                   <div className="card-body p-4">
                     <h3 className="h5 mb-3">Administrative Agent - Team Leader</h3>
@@ -69,13 +75,23 @@ function Experience() {
                   <h3 className="h5 mb-4">Education</h3>
                   
                   <div className="mb-4">
-                    <h4 className="h6">University of Ottawa</h4>
+                    <div className="d-flex align-items-center mb-2">
+                      <div className="education-icon me-3">
+                        <i className="bi bi-mortarboard-fill"></i>
+                      </div>
+                      <h4 className="h6 mb-0">University of Ottawa</h4>
+                    </div>
                     <p className="text-primary mb-1">Computer Engineering Bachelor's Degree</p>
                     <p className="text-muted small">Sep. 2023 - May 2026 (Expected)</p>
                   </div>
                   
                   <div>
-                    <h4 className="h6">Collège La Cité</h4>
+                    <div className="d-flex align-items-center mb-2">
+                      <div className="education-icon me-3">
+                        <i className="bi bi-mortarboard"></i>
+                      </div>
+                      <h4 className="h6 mb-0">Collège La Cité</h4>
+                    </div>
                     <p className="text-primary mb-1">Computer Engineering Associate's Degree - COOP</p>
                     <p className="text-muted small">Sep. 2020 - Dec. 2023</p>
                   </div>

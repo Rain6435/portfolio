@@ -15,8 +15,8 @@ function EcommercePage() {
     <div className="container py-5 my-5">
       <div className="row justify-content-center">
         <div className="col-lg-10">
-        <Link 
-            to="/" 
+          <Link
+            to="/"
             className="btn btn-outline d-inline-flex align-items-center gap-2 mb-5"
           >
             <i className="bi bi-arrow-left"></i> Back to Portfolio

@@ -64,9 +64,9 @@ const routeTree = rootRoute.addChildren([
 export const router = new Router({
   routeTree,
   defaultPreload: "intent",
-  // Add this key configuration for scroll management
+  basepath: "/portfolio", // Set your base path here
   defaultScrollBehavior: {
-    preventScrollRestoration: true, // Prevent browser's default scroll restoration
+    preventScrollRestoration: true,
   },
 });
 

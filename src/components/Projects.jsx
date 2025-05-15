@@ -13,11 +13,46 @@ function Projects() {
               RateMyProfessor API.
             </p>
             <div className="mb-4">
-              <span className="skill-tag">Laravel</span>
-              <span className="skill-tag">React</span>
-              <span className="skill-tag">TypeScript</span>
-              <span className="skill-tag">Inertia.js</span>
-              <span className="skill-tag">Tailwind CSS</span>
+              <span className="skill-badge">
+                <img
+                  src="https://cdn.worldvectorlogo.com/logos/laravel-2.svg"
+                  alt="Laravel"
+                  className="tech-icon me-1"
+                />
+                Laravel
+              </span>
+              <span className="skill-badge">
+                <img
+                  src="https://cdn.worldvectorlogo.com/logos/react-2.svg"
+                  alt="React"
+                  className="tech-icon me-1"
+                />
+                React
+              </span>
+              <span className="skill-badge">
+                <img
+                  src="https://cdn.worldvectorlogo.com/logos/typescript.svg"
+                  alt="TypeScript"
+                  className="tech-icon me-1"
+                />
+                TypeScript
+              </span>
+              <span className="skill-badge">
+                <img
+                  src="https://avatars.githubusercontent.com/u/47703742?s=200&v=4"
+                  alt="Inertia.js"
+                  className="tech-icon me-1"
+                />
+                Inertia.js
+              </span>
+              <span className="skill-badge">
+                <img
+                  src="https://cdn.worldvectorlogo.com/logos/tailwind-css-2.svg"
+                  alt="Tailwind CSS"
+                  className="tech-icon me-1"
+                />
+                Tailwind CSS
+              </span>
             </div>
             <a
               href="https://www.schedulo.pro/"
@@ -29,7 +64,7 @@ function Projects() {
             </a>
           </div>
           <img
-            src="/Logo(2).png"
+            src={`${import.meta.env.BASE_URL}Logo(2).png`}
             alt="Schedulo Project"
             className="img-fluid rounded-full shadow"
           />
