@@ -2,9 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { useEffect } from "react";
 
 function AnalyticsPage() {
-  // Set a custom data attribute for page-specific cursor colors
   useEffect(() => {
-    // Removed window.scrollTo(0, 0) - let ScrollToTop handle this
     document.body.setAttribute("data-page", "analytics");
 
     return () => {
