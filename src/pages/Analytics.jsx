@@ -23,7 +23,6 @@ function AnalyticsPage() {
             <i className="bi bi-arrow-left"></i> Back to Portfolio
           </Link>
 
-          {/* Rest of component unchanged */}
           <div className="card border-0 shadow-sm overflow-hidden">
             <div className="p-0">
               <div
