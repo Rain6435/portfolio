@@ -1,4 +1,5 @@
 import { Link, useNavigate, useLocation } from '@tanstack/react-router'
+import './Footer.css';
 
 function Footer() {
   const navigate = useNavigate()

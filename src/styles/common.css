@@ -1,0 +1,236 @@
+/* =========================================================
+   COMMON STYLES & VARIABLES
+   Author: Mohammed Elhasnaoui
+   Description: Shared styles and variables for the portfolio
+   ========================================================= */
+
+/* ---- VARIABLES & ROOT STYLES ---- */
+:root {
+  /* Core Colors */
+  --primary-color: #6d28d9;
+  --primary-light: #8b5cf6;
+  --primary-dark: #5b21b6;
+  --accent-color: #ec4899;
+  --accent-light: #f472b6;
+  --dark-color: #111827;
+  --light-color: #f9fafb;
+  --mid-color: #e5e7eb;
+  --text-color: #1f2937;
+  --text-light: #6b7280;
+  
+  /* Section-specific cursor colors */
+  --about-color: #8b5cf6;      /* Purple */
+  --experience-color: #ec4899; /* Pink */
+  --work-color: #06b6d4;       /* Teal */
+  --projects-color: #f97316;   /* Orange */
+  --contact-color: #10b981;    /* Green */
+  
+  /* Project page cursor colors */
+  --service-site-color: #06b6d4;  /* Light teal */
+  --game-color: #f97316;          /* Orange */
+  --ecommerce-color: #eab308;     /* Yellow */
+  --analytics-color: #10b981;     /* Green */
+  --error-color: #ef4444;         /* Red */
+}
+
+/* ---- TYPOGRAPHY & BASE STYLES ---- */
+body {
+  font-family: 'Outfit', sans-serif;
+  color: var(--text-color);
+  background-color: var(--light-color);
+  overflow-x: hidden;
+  cursor: none; /* Hide the default cursor */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+}
+
+/* ---- SECTION STYLES ---- */
+.section-title {
+  position: relative;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 80px;
+  height: 6px;
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  border-radius: 3px;
+}
+
+.section-padding {
+  padding: 8rem 0;
+}
+
+/* ---- CARD STYLES ---- */
+.card {
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: white;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-overlay {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%);
+  transition: background 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.card:hover .card-img-overlay {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.8) 100%);
+}
+
+/* ---- BUTTON STYLES ---- */
+.btn-gradient {
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  border: none;
+  color: white;
+  border-radius: 50px;
+  padding: 0.7rem 2rem;
+  font-weight: 500;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.btn-gradient::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent-color), var(--primary-color));
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.btn-gradient:hover {
+  color: white;
+  transform: translateY(-3px);
+}
+
+.btn-gradient:hover::before {
+  opacity: 1;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  border-radius: 50px;
+  padding: 0.7rem 2rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+  background-color: var(--primary-color);
+  color: white;
+  transform: translateY(-3px);
+}
+
+/* Small button variant for project cards */
+.btn-sm {
+  padding: 0.5rem 1.5rem;
+  font-size: 0.875rem;
+}
+
+/* ---- ANIMATION STYLES ---- */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.9s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 {
+  transition-delay: 0.1s;
+}
+
+.reveal-delay-2 {
+  transition-delay: 0.2s;
+}
+
+.reveal-delay-3 {
+  transition-delay: 0.3s;
+}
+
+/* ---- BACKGROUND ELEMENTS ---- */
+.background-blur {
+  position: fixed;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.3) 0%, rgba(236, 72, 153, 0.1) 70%, transparent 100%);
+  filter: blur(60px);
+  transition: all 0.5s ease;
+  z-index: -1;
+}
+
+/* ---- SCROLLBAR STYLES ---- */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--light-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(var(--primary-color), var(--accent-color));
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-dark);
+}
+
+/* ---- RESPONSIVE STYLES ---- */
+@media (max-width: 768px) {
+  /* Adjust section padding */
+  .section-padding {
+    padding: 5rem 0;
+  }
+  
+  /* Adjust section titles */
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .section-title::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 576px) {
+  /* Further adjustments for extra small screens */
+  .btn-gradient, .btn-outline {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+}

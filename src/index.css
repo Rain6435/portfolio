@@ -1,0 +1,24 @@
+/* =========================================================
+   PORTFOLIO WEBSITE CSS - MAIN ENTRY POINT
+   Author: Mohammed Elhasnaoui
+   Description: Main CSS file that imports all component styles
+   ========================================================= */
+
+@import "tailwindcss";
+@plugin "daisyui";
+
+/* Import common styles and utilities */
+@import './styles/common.css';
+@import './styles/cursor.css';
+
+/* Import component-specific styles */
+@import './components/Header.css';
+@import './components/HeroSection.css';
+@import './components/About.css';
+@import './components/Experience.css';
+@import './components/HowIWork.css';
+@import './components/CaseStudies.css';
+@import './components/Footer.css';
+
+/* Import page-specific styles */
+@import './pages/NotFound.css';

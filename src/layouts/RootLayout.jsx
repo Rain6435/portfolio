@@ -3,14 +3,22 @@ import { Outlet, useLocation } from "@tanstack/react-router";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import ScrollToTop from "../components/ScrollToTop";
+import ServiceSiteNavigation from "../pages/ServiceSite/ServiceSiteNavigation";
+import { ServiceSiteProvider } from "../pages/ServiceSite/ServiceSiteWrapper";
 
 function RootLayout() {
   const location = useLocation();
 
-  // Check if current path is the NotFound page
+  // Check if current path is a ServiceSite route
+  const isServiceSiteRoute = (location.pathname.startsWith('/portfolio/projects/service-site'));
+
+  // Check if current path is the NotFound page (matches no known routes)
   const isNotFoundPage = ![
     "/",
     "/projects/service-site",
+    "/projects/service-site/services",
+    "/projects/service-site/appointments", 
+    "/projects/service-site/about",
     "/projects/game",
     "/projects/ecommerce",
     "/projects/analytics",
@@ -18,40 +26,30 @@ function RootLayout() {
 
   // Set up custom cursor across all pages
   useEffect(() => {
-    // Check if device is mobile/tablet (touch-based)
-    const isMobileDevice = () => {
-      return (
-        window.innerWidth <= 768 ||
-        navigator.maxTouchPoints > 0 ||
-        navigator.msMaxTouchPoints > 0 ||
-        "ontouchstart" in window
-      );
+    // Create custom cursors for all pages
+    const cursor = document.createElement("div");
+    cursor.classList.add("custom-cursor");
+    document.body.appendChild(cursor);
+
+    const cursorDot = document.createElement("div");
+    cursorDot.classList.add("custom-cursor-dot");
+    document.body.appendChild(cursorDot);
+
+    // Handle mouse movement for both cursors
+    const handleMouseMove = (e) => {
+      cursor.style.left = `${e.clientX}px`;
+      cursor.style.top = `${e.clientY}px`;
+
+      cursorDot.style.left = `${e.clientX}px`;
+      cursorDot.style.top = `${e.clientY}px`;
     };
 
-    // Only create custom cursor on non-mobile devices
-    if (!isMobileDevice()) {
-      // Create custom cursors
-      const cursor = document.createElement("div");
-      cursor.classList.add("custom-cursor");
-      document.body.appendChild(cursor);
+    document.addEventListener("mousemove", handleMouseMove);
 
-      const cursorDot = document.createElement("div");
-      cursorDot.classList.add("custom-cursor-dot");
-      document.body.appendChild(cursorDot);
-
-      // Handle mouse movement for both cursors
-      const handleMouseMove = (e) => {
-        cursor.style.left = `${e.clientX}px`;
-        cursor.style.top = `${e.clientY}px`;
-
-        cursorDot.style.left = `${e.clientX}px`;
-        cursorDot.style.top = `${e.clientY}px`;
-      };
-
-      document.addEventListener("mousemove", handleMouseMove);
-
-      // Create moving background blur
-      const blur = document.createElement("div");
+    // Create moving background blur (only for non-ServiceSite routes)
+    let blur;
+    if (!isServiceSiteRoute) {
+      blur = document.createElement("div");
       blur.classList.add("background-blur");
       document.body.appendChild(blur);
 
@@ -63,44 +61,46 @@ function RootLayout() {
       };
 
       document.addEventListener("mousemove", handleMouseMoveBlur);
+    }
 
-      // Change cursor style for links and buttons
-      const handleLinkHoverIn = () => {
-        cursor.classList.add("cursor-link");
-        cursorDot.classList.add("cursor-dot-link");
-      };
+    // Change cursor style for links and buttons
+    const handleLinkHoverIn = () => {
+      cursor.classList.add("cursor-link");
+      cursorDot.classList.add("cursor-dot-link");
+    };
 
-      const handleLinkHoverOut = () => {
-        cursor.classList.remove("cursor-link");
-        cursorDot.classList.remove("cursor-dot-link");
-      };
+    const handleLinkHoverOut = () => {
+      cursor.classList.remove("cursor-link");
+      cursorDot.classList.remove("cursor-dot-link");
+    };
 
-      // Function to apply link events
-      const applyLinkEvents = () => {
-        const links = document.querySelectorAll(
-          'a, button, .btn, [role="button"]'
-        );
-        links.forEach((link) => {
-          link.addEventListener("mouseenter", handleLinkHoverIn);
-          link.addEventListener("mouseleave", handleLinkHoverOut);
-          link.style.cursor = "none"; // Ensure no cursor on links
-        });
-      };
+    // Function to apply link events
+    const applyLinkEvents = () => {
+      const links = document.querySelectorAll(
+        'a, button, .btn, [role="button"]'
+      );
+      links.forEach((link) => {
+        link.addEventListener("mouseenter", handleLinkHoverIn);
+        link.addEventListener("mouseleave", handleLinkHoverOut);
+        link.style.cursor = "none"; // Ensure no cursor on links
+      });
+    };
 
-      // Apply initially
+    // Apply initially
+    applyLinkEvents();
+
+    // Also apply after DOM changes using MutationObserver
+    const observer = new MutationObserver(() => {
       applyLinkEvents();
+    });
 
-      // Also apply after DOM changes using MutationObserver
-      const observer = new MutationObserver(() => {
-        applyLinkEvents();
-      });
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true,
+    });
 
-      observer.observe(document.body, {
-        childList: true,
-        subtree: true,
-      });
-
-      // Change cursor color based on section
+    // Change cursor color based on section (only for main portfolio pages)
+    if (!isServiceSiteRoute) {
       const sectionColors = [
         { id: "about", class: "cursor-about", dotClass: "cursor-dot-about" },
         {
@@ -154,35 +154,46 @@ function RootLayout() {
       // Initial check
       checkSectionInView();
 
-      // Cleanup on unmount
+      // Cleanup scroll listener
       return () => {
-        document.removeEventListener("mousemove", handleMouseMove);
-        document.removeEventListener("mousemove", handleMouseMoveBlur);
         window.removeEventListener("scroll", checkSectionInView);
-        observer.disconnect();
-
-        // Remove elements
-        if (cursor.parentNode) document.body.removeChild(cursor);
-        if (cursorDot.parentNode) document.body.removeChild(cursorDot);
-        if (blur.parentNode) document.body.removeChild(blur);
       };
-    } else {
-      // For mobile devices, ensure cursor styles are removed
-      document.body.classList.add("mobile-device");
     }
-  }, []);
+
+    // Cleanup on unmount
+    return () => {
+      document.removeEventListener("mousemove", handleMouseMove);
+      if (blur) {
+        document.removeEventListener("mousemove", handleMouseMoveBlur);
+      }
+      observer.disconnect();
+
+      // Remove elements
+      if (cursor.parentNode) document.body.removeChild(cursor);
+      if (cursorDot.parentNode) document.body.removeChild(cursorDot);
+      if (blur && blur.parentNode) document.body.removeChild(blur);
+    };
+  }, [isServiceSiteRoute]);
 
   return (
-    <>
+    <ServiceSiteProvider>
       <ScrollToTop />
-      <Header hideContactButton={isNotFoundPage} />
+      {/* Conditionally render the appropriate header */}
+      {!location.pathname.startsWith('/portfolio/projects/storyboard') && (
+        isServiceSiteRoute ? (
+          <ServiceSiteNavigation />
+        ) : (
+          <Header isNotFoundPage={isNotFoundPage} />
+        )
+      )}
 
-      <main>
+      <main className="h-full min-h-screen">
         <Outlet />
       </main>
 
-      {!isNotFoundPage && <Footer />}
-    </>
+      {/* Only show footer on non-ServiceSite pages, non-NotFound pages, and non-Storyboard pages */}
+      {!isServiceSiteRoute && !isNotFoundPage && <Footer />}
+    </ServiceSiteProvider>
   );
 }
 

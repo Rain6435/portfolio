@@ -1,3 +1,5 @@
+import './Experience.css';
+
 function Experience() {
   return (
     <section id="experience" className="section-padding bg-light">

@@ -8,10 +8,6 @@ import { resolve } from "node:path";
 export default defineConfig({
   plugins: [viteReact(), tailwindcss()],
   base: "/portfolio/",
-  test: {
-    globals: true,
-    environment: "jsdom",
-  },
   resolve: {
     alias: {
       "@": resolve(__dirname, "./src"),

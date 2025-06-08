@@ -1,3 +1,5 @@
+import './HowIWork.css';
+
 function HowIWork() {
   return (
     <section id="work" className="section-padding">
@@ -170,3 +172,4 @@ function HowIWork() {
 }
 
 export default HowIWork;
+                    

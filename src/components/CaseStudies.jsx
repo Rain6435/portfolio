@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import './CaseStudies.css';
 
 function CaseStudies() {
   return (

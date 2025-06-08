@@ -1,3 +1,5 @@
+import './HeroSection.css';
+
 function HeroSection() {
   return (
     <section className="hero-section" id="home">
@@ -56,7 +58,7 @@ function HeroSection() {
               <img
                 src={`${import.meta.env.BASE_URL}pfp.png`}
                 alt="Mohammed Elhasnaoui"
-                className="img-fluid rounded-4 border border-3 border-white shadow-lg"
+                className="img-fluid rounded-4 border border-white shadow-lg"
               />
             </div>
           </div>

@@ -1,3 +1,5 @@
+import './About.css';
+
 function About() {
   return (
     <section id="about" className="section-padding">

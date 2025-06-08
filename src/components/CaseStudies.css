@@ -1,0 +1,55 @@
+/* ---- CASE STUDIES COMPONENT STYLES ---- */
+
+/* Project Card Styles */
+.project-card {
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  height: 300px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.project-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.project-card:hover img {
+  transform: scale(1.05);
+}
+
+.project-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.5rem;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+/* Ensure content stays visible */
+.project-card .project-content {
+  transform: translateY(0);
+}
+
+/* Button styling within cards */
+.project-card .btn-gradient {
+  transition: all 0.3s ease;
+}
+
+.project-card:hover .btn-gradient {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+  .project-card {
+    height: 250px;
+  }
+}

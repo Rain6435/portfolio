@@ -5,7 +5,6 @@ import Experience from '../components/Experience'
 import HowIWork from '../components/HowIWork'
 import CaseStudies from '../components/CaseStudies'
 import Contact from '../components/Contact'
-import Footer from '../components/Footer'
 
 function HomePage() {
   useEffect(() => {
@@ -41,7 +40,6 @@ function HomePage() {
       <HowIWork />
       <CaseStudies />
       <Contact />
-      <Footer />
     </>
   )
 }

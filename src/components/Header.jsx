@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { Link, useNavigate, useLocation } from "@tanstack/react-router";
+import './Header.css';
 
-function Header({ hideContactButton = false }) {
+function Header({ isNotFoundPage = false }) {
   const [scrolled, setScrolled] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const navigate = useNavigate();
@@ -83,8 +84,22 @@ function Header({ hideContactButton = false }) {
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto">
-            {/* Only show navigation items if not on NotFound page */}
-            {!hideContactButton && (
+            {isNotFoundPage ? (
+              // NotFound page - only show home button
+              <li className="nav-item">
+                <Link
+                  to="/"
+                  className="btn btn-gradient"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    navigate({ to: "/" });
+                  }}
+                >
+                  <i className="bi bi-house-door me-2"></i> Go Home
+                </Link>
+              </li>
+            ) : (
+              // Normal portfolio pages - show full navigation
               <>
                 <li className="nav-item">
                   <a
@@ -140,21 +155,6 @@ function Header({ hideContactButton = false }) {
                   </a>
                 </li>
               </>
-            )}
-            {/* Always show a home button on error page */}
-            {hideContactButton && (
-              <li className="nav-item">
-                <Link
-                  to="/"
-                  className="btn btn-gradient"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    navigate({ to: "/" });
-                  }}
-                >
-                  <i className="bi bi-house-door me-2"></i> Go Home
-                </Link>
-              </li>
             )}
           </ul>
         </div>

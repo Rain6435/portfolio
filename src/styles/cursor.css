@@ -1,0 +1,162 @@
+/* =========================================================
+   CUSTOM CURSOR STYLES
+   Author: Mohammed Elhasnaoui
+   Description: Custom cursor implementation for desktop users
+   ========================================================= */
+
+/* ---- CUSTOM CURSOR STYLES ---- */
+.custom-cursor {
+  position: fixed;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid var(--primary-color);
+  transform: translate(-50%, -50%);
+  transition: width 0.3s, height 0.3s, background-color 0.3s, border-color 0.3s;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  display: block; /* Always show the cursor */
+}
+
+.custom-cursor-dot {
+  position: fixed;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  transform: translate(-50%, -50%);
+  transition: background-color 0.3s;
+  z-index: 10000;
+  display: block; /* Always show the cursor */
+}
+
+/* Section-specific cursor colors */
+.cursor-about {
+  border-color: var(--about-color);
+}
+
+.cursor-dot-about {
+  background-color: var(--about-color);
+}
+
+.cursor-experience {
+  border-color: var(--experience-color);
+}
+
+.cursor-dot-experience {
+  background-color: var(--experience-color);
+}
+
+.cursor-work {
+  border-color: var(--work-color);
+}
+
+.cursor-dot-work {
+  background-color: var(--work-color);
+}
+
+.cursor-projects {
+  border-color: var(--projects-color);
+}
+
+.cursor-dot-projects {
+  background-color: var(--projects-color);
+}
+
+.cursor-contact {
+  border-color: var(--contact-color);
+}
+
+.cursor-dot-contact {
+  background-color: var(--contact-color);
+}
+
+/* Page-specific cursor colors */
+body[data-page="service-site"] .custom-cursor {
+  border-color: var(--service-site-color) !important;
+}
+
+body[data-page="service-site"] .custom-cursor-dot {
+  background-color: var(--service-site-color) !important;
+}
+
+body[data-page="game"] .custom-cursor {
+  border-color: var(--game-color) !important;
+}
+
+body[data-page="game"] .custom-cursor-dot {
+  background-color: var(--game-color) !important;
+}
+
+body[data-page="ecommerce"] .custom-cursor {
+  border-color: var(--ecommerce-color) !important;
+}
+
+body[data-page="ecommerce"] .custom-cursor-dot {
+  background-color: var(--ecommerce-color) !important;
+}
+
+body[data-page="analytics"] .custom-cursor {
+  border-color: var(--analytics-color) !important;
+}
+
+body[data-page="analytics"] .custom-cursor-dot {
+  background-color: var(--analytics-color) !important;
+}
+
+body[data-page="not-found"] .custom-cursor {
+  border-color: var(--error-color) !important;
+}
+
+body[data-page="not-found"] .custom-cursor-dot {
+  background-color: var(--error-color) !important;
+}
+
+/* Cursor interaction with links and buttons */
+.cursor-link {
+  width: 60px;
+  height: 60px;
+  border-width: 3px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.cursor-dot-link {
+  width: 4px;
+  height: 4px;
+}
+
+/* Hide default cursors */
+a, button, .btn, [role="button"] {
+  cursor: none;
+}
+
+* {
+  cursor: none;
+}
+
+/* Mobile responsive - hide custom cursor */
+@media (max-width: 768px) {
+  /* Hide custom cursor on mobile */
+  body {
+    cursor: auto !important;
+  }
+  
+  a, button, .btn, [role="button"] {
+    cursor: pointer !important;
+  }
+  
+  * {
+    cursor: auto !important;
+  }
+  
+  .custom-cursor,
+  .custom-cursor-dot {
+    display: none !important;
+  }
+}
