@@ -10,14 +10,18 @@ function RootLayout() {
   const location = useLocation();
 
   // Check if current path is a ServiceSite route
-  const isServiceSiteRoute = (location.pathname.startsWith('/portfolio/projects/service-site'));
+  const isServiceSiteRoute = location.pathname.startsWith(
+    "/portfolio/projects/service-site"
+  );
+
+  const isGameRoute = location.pathname.startsWith("/portfolio/projects/game");
 
   // Check if current path is the NotFound page (matches no known routes)
   const isNotFoundPage = ![
     "/",
     "/projects/service-site",
     "/projects/service-site/services",
-    "/projects/service-site/appointments", 
+    "/projects/service-site/appointments",
     "/projects/service-site/about",
     "/projects/game",
     "/projects/ecommerce",
@@ -179,13 +183,12 @@ function RootLayout() {
     <ServiceSiteProvider>
       <ScrollToTop />
       {/* Conditionally render the appropriate header */}
-      {!location.pathname.startsWith('/portfolio/projects/storyboard') && (
-        isServiceSiteRoute ? (
+      {!isGameRoute &&
+        (isServiceSiteRoute ? (
           <ServiceSiteNavigation />
         ) : (
           <Header isNotFoundPage={isNotFoundPage} />
-        )
-      )}
+        ))}
 
       <main className="h-full min-h-screen">
         <Outlet />
