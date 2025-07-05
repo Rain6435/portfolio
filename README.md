@@ -1,12 +1,64 @@
-# React + Vite
+# Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern React portfolio website built with Vite, showcasing interactive projects and professional experience.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Interactive Portfolio**: Personal homepage with hero section, about, experience, and contact information
+- **Project Showcase**: Multiple interactive project demonstrations including:
+  - Memory Flow Game (pattern matching, sequence, and spatial memory games)
+  - E-commerce Site (product catalog, shopping cart, checkout)
+  - Service Site (veterinary/appointment booking system)
+  - Analytics Dashboard
+- **Responsive Design**: Built with Bootstrap 5 and Tailwind CSS
+- **Modern Routing**: TanStack Router for client-side navigation
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Frontend**: React 19, Vite 6
+- **Styling**: Bootstrap 5, Tailwind CSS 4, DaisyUI
+- **Routing**: TanStack Router
+- **Icons**: Bootstrap Icons, Lucide React
+- **Build Tool**: Vite with React plugin
+
+## Project Structure
+
+```
+src/
+├── components/          # Reusable UI components
+│   ├── MemoryFlow/     # Memory game components
+│   └── ...             # Portfolio sections (About, Experience, etc.)
+├── pages/              # Route pages
+│   ├── Ecommerce/      # E-commerce demo components
+│   ├── ServiceSite/    # Service site demo components
+│   └── ...             # Other project pages
+├── layouts/            # Layout components
+├── router/             # Route configuration
+├── styles/             # Global styles
+└── assets/             # Static assets
+```
+
+## Getting Started
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
+
+# Deploy to GitHub Pages
+npm run deploy
+```
+
+## Development
+
+- **Linting**: ESLint with React hooks and refresh plugins
+- **Hot Reload**: Vite HMR for fast development
+- **Deployment**: GitHub Pages integration
