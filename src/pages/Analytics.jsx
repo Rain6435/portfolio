@@ -13,15 +13,10 @@ function AnalyticsPage() {
   }, [])
   
   return (
-    <div className="container py-5 my-5">
-      <div className="row justify-content-center">
-        <div className="col-lg-10">
-          <Link 
-            to="/" 
-            className="btn btn-outline d-inline-flex align-items-center gap-2 mb-5"
-          >
-            <i className="bi bi-arrow-left"></i> Back to Portfolio
-          </Link>
+    <div className="analytics-page">
+      <div className="container py-5 my-5">
+        <div className="row justify-content-center">
+          <div className="col-lg-10">
           
           {/* Rest of component unchanged */}
           <div className="card border-0 shadow-sm overflow-hidden">
@@ -146,6 +141,7 @@ function AnalyticsPage() {
                 </div>
               </div>
             </div>
+          </div>
           </div>
         </div>
       </div>

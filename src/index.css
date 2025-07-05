@@ -22,3 +22,22 @@
 
 /* Import page-specific styles */
 @import './pages/NotFound.css';
+
+/* Layout styles */
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.layout-main {
+  flex: 1;
+  padding-top: 80px; /* Account for fixed header */
+}
+
+/* Project page wrappers */
+.game-page,
+.analytics-page,
+.ecommerce-wrapper {
+  min-height: calc(100vh - 80px);
+}

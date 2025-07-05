@@ -14,7 +14,6 @@ function RootLayout() {
     "/portfolio/projects/service-site"
   );
 
-  const isGameRoute = location.pathname.startsWith("/portfolio/projects/game");
 
   // Check if current path is the NotFound page (matches no known routes)
   const isNotFoundPage = ![
@@ -52,12 +51,13 @@ function RootLayout() {
 
     // Create moving background blur (only for non-ServiceSite routes)
     let blur;
+    let handleMouseMoveBlur;
     if (!isServiceSiteRoute) {
       blur = document.createElement("div");
       blur.classList.add("background-blur");
       document.body.appendChild(blur);
 
-      const handleMouseMoveBlur = (e) => {
+      handleMouseMoveBlur = (e) => {
         const x = (e.clientX / window.innerWidth) * 100;
         const y = (e.clientY / window.innerHeight) * 100;
         blur.style.left = `${x}%`;
@@ -182,20 +182,24 @@ function RootLayout() {
   return (
     <ServiceSiteProvider>
       <ScrollToTop />
-      {/* Conditionally render the appropriate header */}
-      {!isGameRoute &&
-        (isServiceSiteRoute ? (
+      <div className="layout-container">
+        {/* Always show the standard header unless it's a ServiceSite route */}
+        {isServiceSiteRoute ? (
           <ServiceSiteNavigation />
         ) : (
-          <Header isNotFoundPage={isNotFoundPage} />
-        ))}
+          <Header 
+            isNotFoundPage={isNotFoundPage}
+            currentPath={location.pathname}
+          />
+        )}
 
-      <main className="h-full min-h-screen">
-        <Outlet />
-      </main>
+        <main className="layout-main">
+          <Outlet />
+        </main>
 
-      {/* Only show footer on non-ServiceSite pages, non-NotFound pages, and non-Storyboard pages */}
-      {!isServiceSiteRoute && !isNotFoundPage && <Footer />}
+        {/* Only show footer on non-ServiceSite pages and non-NotFound pages */}
+        {!isServiceSiteRoute && !isNotFoundPage && <Footer />}
+      </div>
     </ServiceSiteProvider>
   );
 }

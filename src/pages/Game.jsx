@@ -56,18 +56,7 @@ function GamePage() {
 
   return (
     <GameProvider>
-      <div className="relative">
-        {/* Back to Portfolio Button - Always visible */}
-        <div className="absolute top-4 left-4 z-10">
-          <Link
-            to="/"
-            className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-white px-4 py-2 rounded-lg hover:bg-white/20 transition-colors"
-          >
-            <i className="bi bi-arrow-left"></i> Back to Portfolio
-          </Link>
-        </div>
-
-        {/* Game Content */}
+      <div className="game-page">
         <GameContent />
       </div>
     </GameProvider>

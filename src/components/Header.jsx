@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useNavigate, useLocation } from "@tanstack/react-router";
 import './Header.css';
 
-function Header({ isNotFoundPage = false }) {
+function Header({ isNotFoundPage = false, currentPath = "" }) {
   const [scrolled, setScrolled] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const navigate = useNavigate();
@@ -98,8 +98,54 @@ function Header({ isNotFoundPage = false }) {
                   <i className="bi bi-house-door me-2"></i> Go Home
                 </Link>
               </li>
+            ) : currentPath.startsWith("/projects/") ? (
+              // Project pages - show back to portfolio button + main nav
+              <>
+                <li className="nav-item me-3">
+                  <Link
+                    to="/"
+                    className="btn btn-outline-light btn-sm d-inline-flex align-items-center gap-2"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      navigate({ to: "/" });
+                    }}
+                  >
+                    <i className="bi bi-arrow-left"></i> Back to Portfolio
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <a
+                    className="nav-link px-3"
+                    href="/"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      navigate({ to: "/" });
+                    }}
+                  >
+                    Home
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a
+                    className="nav-link px-3"
+                    href="/#projects"
+                    onClick={(e) => handleNavigation(e, "/#projects")}
+                  >
+                    Projects
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a
+                    className="nav-link px-3"
+                    href="/#contact"
+                    onClick={(e) => handleNavigation(e, "/#contact")}
+                  >
+                    Contact
+                  </a>
+                </li>
+              </>
             ) : (
-              // Normal portfolio pages - show full navigation
+              // Home page - show full navigation
               <>
                 <li className="nav-item">
                   <a

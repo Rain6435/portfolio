@@ -6,7 +6,7 @@ import "./ServiceSite.css"; // Adjust the path to your logo image
 
 const ServiceSiteAboutUsPage = () => {
   const navigate = useNavigate();
-  const { services } = useServiceSite();
+  useServiceSite();
 
   const teamMembers = [
     {

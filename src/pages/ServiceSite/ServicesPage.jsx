@@ -74,7 +74,7 @@ const ServicesPage = ({ setCurrentPage, handleBookAppointment, services }) => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {services.map((service, index) => (
+            {services.map((service) => (
               <div 
                 key={service.id}
                 onClick={() => handleServiceSelect(service)}
@@ -117,7 +117,7 @@ const ServicesPage = ({ setCurrentPage, handleBookAppointment, services }) => {
           </div>
 
           <div className="space-y-8">
-            {services.map((service, index) => (
+            {services.map((service) => (
               <div 
                 key={service.id}
                 className="bg-white rounded-3xl overflow-hidden shadow-xl border border-slate-200 hover-lift transition-all duration-500"
