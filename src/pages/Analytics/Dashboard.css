@@ -1,0 +1,739 @@
+/* Import Professional Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Analytics Dashboard Styles */
+.analytics-dashboard {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #cbd5e1 100%);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Header */
+.dashboard-header {
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid #e5e7eb;
+  padding: 2rem 0;
+  margin-bottom: 2rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 0.5rem;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: -0.02em;
+}
+
+.dashboard-subtitle {
+  font-size: 1.2rem;
+  color: #6b7280;
+  margin-bottom: 0;
+  font-weight: 400;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Context Section */
+.dashboard-context {
+  margin-bottom: 2rem;
+}
+
+.dashboard-context .alert {
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  margin-bottom: 1rem;
+  font-family: 'Inter', sans-serif;
+}
+
+.dashboard-context .alert-info {
+  background: rgba(59, 130, 246, 0.08);
+  border-left: 4px solid #3b82f6;
+  color: #1f2937;
+}
+
+.dashboard-context .alert-light {
+  background: rgba(255, 255, 255, 0.98);
+  border-left: 4px solid #f59e0b;
+  color: #1f2937;
+}
+
+/* Main Dashboard */
+.dashboard-main {
+  padding-bottom: 3rem;
+}
+
+/* Chart Containers */
+.chart-container {
+  background: rgba(255, 255, 255, 0.98);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(20px);
+  border: 1px solid #e5e7eb;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  height: 100%;
+}
+
+.chart-container:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* Chart Headers */
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.chart-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #111827;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: -0.01em;
+}
+
+/* Chart Controls */
+.chart-controls {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.control-group label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #6b7280;
+  margin-bottom: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+.control-group select {
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  background: white;
+  color: #111827;
+  transition: all 0.2s ease;
+  min-width: 120px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+}
+
+.control-group select:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.control-group select:hover {
+  border-color: #9ca3af;
+}
+
+/* Chart Canvas */
+.chart-canvas {
+  position: relative;
+  height: 400px;
+  margin-top: 1rem;
+}
+
+/* Language Selector */
+.language-selector {
+  position: relative;
+}
+
+.language-selector select {
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 0.75rem 1.25rem;
+  font-size: 0.875rem;
+  background: white;
+  color: #111827;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: 'Inter', sans-serif;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right 0.75rem center;
+  background-repeat: no-repeat;
+  background-size: 1.5em 1.5em;
+  padding-right: 2.5rem;
+}
+
+.language-selector select:hover {
+  background-color: #f9fafb;
+  border-color: #9ca3af;
+}
+
+.language-selector select:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.language-selector::before {
+  content: '🌐';
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.language-selector select {
+  padding-left: 2.5rem;
+}
+
+/* Food Selector */
+.food-selector {
+  margin-bottom: 1.5rem;
+}
+
+.food-selector .form-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 0.75rem;
+  font-family: 'Inter', sans-serif;
+}
+
+.food-selector .form-check {
+  margin-bottom: 0.5rem;
+}
+
+.food-selector .form-check-input {
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  width: 1.125rem;
+  height: 1.125rem;
+  background-color: white;
+  transition: all 0.2s ease;
+}
+
+.food-selector .form-check-input:checked {
+  background-color: #3b82f6;
+  border-color: #3b82f6;
+}
+
+.food-selector .form-check-input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.food-selector .form-check-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+  margin-left: 0.5rem;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+}
+
+.food-selector .form-check-label:hover {
+  color: #111827;
+}
+
+/* Category Food Selector */
+.category-food-selector {
+  margin-bottom: 1.5rem;
+  height: 300px;
+  overflow-y: auto;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.category-food-selector .form-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 0.75rem;
+  font-family: 'Inter', sans-serif;
+  position: sticky;
+  top: 0;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 0.5rem 0;
+  z-index: 10;
+}
+
+/* Category Toggles */
+.category-toggles {
+  padding: 1rem;
+  background: rgba(249, 250, 251, 0.8);
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+
+.category-toggle {
+  margin-bottom: 0.5rem;
+}
+
+.category-toggle .form-check-input {
+  border: 2px solid #d1d5db;
+  border-radius: 6px;
+  width: 1.25rem;
+  height: 1.25rem;
+  background-color: white;
+  transition: all 0.2s ease;
+}
+
+.category-toggle .form-check-input:checked {
+  background-color: #10b981;
+  border-color: #10b981;
+}
+
+.category-toggle .form-check-input:focus {
+  border-color: #10b981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+.category-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #374151;
+  margin-left: 0.5rem;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+
+.category-label:hover {
+  color: #111827;
+}
+
+/* Food Categories */
+.food-categories {
+  margin-top: 1rem;
+}
+
+.food-category-group {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+
+.category-group-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 0.75rem;
+  font-family: 'Inter', sans-serif;
+  text-transform: capitalize;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.food-category-group .form-check {
+  margin-bottom: 0.5rem;
+}
+
+.food-category-group .form-check-input {
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  width: 1.125rem;
+  height: 1.125rem;
+  background-color: white;
+  transition: all 0.2s ease;
+}
+
+.food-category-group .form-check-input:checked {
+  background-color: #3b82f6;
+  border-color: #3b82f6;
+}
+
+.food-category-group .form-check-input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.food-category-group .form-check-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+  margin-left: 0.5rem;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+}
+
+.food-category-group .form-check-label:hover {
+  color: #111827;
+}
+
+/* Loading State */
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 1.2rem;
+  color: #7f8c8d;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .dashboard-title {
+    font-size: 2rem;
+  }
+  
+  .dashboard-subtitle {
+    font-size: 1rem;
+  }
+  
+  .chart-container {
+    padding: 1.5rem;
+  }
+  
+  .chart-header {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: stretch;
+  }
+  
+  .chart-controls {
+    justify-content: space-between;
+  }
+  
+  .control-group {
+    flex: 1;
+    min-width: 100px;
+  }
+}
+
+@media (max-width: 576px) {
+  .dashboard-header {
+    padding: 1.5rem 0;
+  }
+  
+  .dashboard-title {
+    font-size: 1.8rem;
+  }
+  
+  .chart-container {
+    padding: 1rem;
+  }
+  
+  .chart-canvas {
+    height: 300px;
+  }
+  
+  .chart-controls {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .control-group {
+    width: 100%;
+  }
+}
+
+/* Food Selection Table Styles */
+.food-selector-container {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  overflow-x: auto;
+}
+
+.food-selection-table .table {
+  margin-bottom: 0;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+}
+
+.food-selection-table .table th {
+  background: rgba(59, 130, 246, 0.08);
+  border: 1px solid #e5e7eb;
+  color: #111827;
+  font-weight: 600;
+  padding: 0.5rem;
+  text-align: center;
+  vertical-align: middle;
+  text-transform: capitalize;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.food-selection-table .food-header {
+  background: rgba(16, 185, 129, 0.08);
+  border-right: 2px solid #10b981;
+  width: 120px;
+  min-width: 120px;
+  text-align: left;
+  padding-left: 0.75rem;
+}
+
+.food-selection-table .category-header {
+  width: 80px;
+  min-width: 80px;
+  font-size: 0.75rem;
+}
+
+.food-selection-table .table td {
+  border: 1px solid #e5e7eb;
+  padding: 0.5rem;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.food-selection-table .food-name-cell {
+  background: rgba(249, 250, 251, 0.8);
+  border-right: 2px solid #10b981;
+  width: 120px;
+  min-width: 120px;
+  text-align: left;
+  padding-left: 0.75rem;
+  color: #111827;
+  font-size: 0.8rem;
+  font-weight: 500;
+  position: sticky;
+  left: 0;
+  z-index: 5;
+}
+
+.food-selection-table .food-checkbox-cell {
+  width: 80px;
+  min-width: 80px;
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.food-selection-table .form-check {
+  margin-bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.food-selection-table .form-check-input {
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  width: 1rem;
+  height: 1rem;
+  background-color: white;
+  transition: all 0.2s ease;
+  margin: 0;
+}
+
+.food-selection-table .form-check-input:checked {
+  background-color: #3b82f6;
+  border-color: #3b82f6;
+}
+
+.food-selection-table .form-check-input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.1);
+}
+
+.food-selection-table .table tbody tr:hover {
+  background: rgba(59, 130, 246, 0.02);
+}
+
+.food-selection-table .table tbody tr:hover .food-name-cell {
+  background: rgba(16, 185, 129, 0.05);
+}
+
+/* Table View Styles */
+.table-view {
+  background: rgba(255, 255, 255, 0.98);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e5e7eb;
+  margin-top: 1rem;
+}
+
+.table-view .table {
+  margin-bottom: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+.table-view .table th {
+  background: rgba(59, 130, 246, 0.08);
+  border-bottom: 2px solid #3b82f6;
+  color: #111827;
+  font-weight: 600;
+  font-size: 0.875rem;
+  padding: 0.75rem;
+  text-transform: capitalize;
+}
+
+.table-view .table td {
+  padding: 0.75rem;
+  font-size: 0.875rem;
+  vertical-align: middle;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.table-view .table tbody tr:hover {
+  background: rgba(59, 130, 246, 0.04);
+}
+
+.table-view .table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Data Display Container */
+.data-display {
+  transition: all 0.3s ease;
+}
+
+/* Clean separation between table and chart */
+.food-selector-container {
+  margin-right: 1rem;
+}
+
+.data-display {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  height: 100%;
+}
+
+.data-display .chart-canvas {
+  height: 500px;
+}
+
+@media (max-width: 992px) {
+  .food-selector-container {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+}
+
+/* Responsive Table View */
+@media (max-width: 768px) {
+  .food-selection-table .food-header {
+    width: 100px;
+    min-width: 100px;
+    font-size: 0.75rem;
+  }
+  
+  .food-selection-table .food-name-cell {
+    width: 100px;
+    min-width: 100px;
+    font-size: 0.75rem;
+  }
+  
+  .food-selection-table .category-header {
+    width: 70px;
+    min-width: 70px;
+    font-size: 0.7rem;
+  }
+  
+  .food-selection-table .food-checkbox-cell {
+    width: 70px;
+    min-width: 70px;
+  }
+  
+  .table-view {
+    padding: 1rem;
+  }
+  
+  .table-view .table th,
+  .table-view .table td {
+    padding: 0.5rem;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .food-selector-container {
+    padding: 0.75rem;
+  }
+  
+  .food-selection-table .food-header {
+    width: 80px;
+    min-width: 80px;
+    font-size: 0.7rem;
+  }
+  
+  .food-selection-table .food-name-cell {
+    width: 80px;
+    min-width: 80px;
+    font-size: 0.7rem;
+  }
+  
+  .food-selection-table .category-header {
+    width: 60px;
+    min-width: 60px;
+    font-size: 0.65rem;
+  }
+  
+  .food-selection-table .food-checkbox-cell {
+    width: 60px;
+    min-width: 60px;
+  }
+  
+  .food-selection-table .form-check-input {
+    width: 0.9rem;
+    height: 0.9rem;
+  }
+  
+  .table-view {
+    padding: 0.75rem;
+  }
+  
+  .table-view .table th,
+  .table-view .table td {
+    padding: 0.4rem;
+    font-size: 0.75rem;
+  }
+}
+
+/* Animation for chart updates */
+.chart-container canvas {
+  transition: opacity 0.3s ease;
+}
+
+.chart-updating canvas {
+  opacity: 0.7;
+}
+
+/* Accessibility */
+.chart-container:focus-within {
+  outline: 3px solid #3498db;
+  outline-offset: 2px;
+}
+
+/* Print Styles */
+@media print {
+  .analytics-dashboard {
+    background: white;
+  }
+  
+  .chart-container {
+    box-shadow: none;
+    border: 1px solid #ddd;
+  }
+  
+  .dashboard-header {
+    background: white;
+    border-bottom: 1px solid #ddd;
+  }
+}
