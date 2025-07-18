@@ -1,4 +1,4 @@
-import './HowIWork.css';
+import "./HowIWork.css";
 
 function HowIWork() {
   return (
@@ -22,8 +22,8 @@ function HowIWork() {
               I believe that great software is built on a foundation of:
             </p>
 
-            <div className="row">
-              <div className="col-md-6 mb-4">
+            <div className="flex flex-col">
+              <div className="mb-4">
                 <div className="icon-box">
                   <div className="icon-box-icon">
                     <i className="bi bi-person-check"></i>
@@ -38,7 +38,7 @@ function HowIWork() {
                 </div>
               </div>
 
-              <div className="col-md-6 mb-4">
+              <div className="mb-4">
                 <div className="icon-box">
                   <div className="icon-box-icon">
                     <i className="bi bi-arrow-repeat"></i>
@@ -52,7 +52,7 @@ function HowIWork() {
                 </div>
               </div>
 
-              <div className="col-md-6 mb-4">
+              <div className="mb-4">
                 <div className="icon-box">
                   <div className="icon-box-icon">
                     <i className="bi bi-code-square"></i>
@@ -66,7 +66,7 @@ function HowIWork() {
                 </div>
               </div>
 
-              <div className="col-md-6 mb-4">
+              <div className="mb-4">
                 <div className="icon-box">
                   <div className="icon-box-icon">
                     <i className="bi bi-speedometer2"></i>
@@ -172,4 +172,3 @@ function HowIWork() {
 }
 
 export default HowIWork;
-                    

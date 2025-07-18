@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import './CaseStudies.css';
+import "./CaseStudies.css";
 
 function CaseStudies() {
   return (
@@ -9,7 +9,8 @@ function CaseStudies() {
           <div className="col-12 reveal">
             <h2 className="section-title">Case Studies</h2>
             <p className="lead">
-              Explore my upcoming design projects for the SEG3125 course.
+              Explore my interactive design projects showcasing modern web
+              development.
             </p>
           </div>
         </div>
@@ -17,10 +18,9 @@ function CaseStudies() {
         <div className="row">
           <div className="col-md-6 col-lg-3 mb-4 reveal">
             <div className="project-card">
-              <img
-                src={`${import.meta.env.BASE_URL}soon-svg.svg`}
-                alt="Service Site"
-              />
+              <div className="project-preview service-site">
+                <i className="bi bi-hospital project-icon"></i>
+              </div>
               <div className="project-content">
                 <h3 className="h5 mb-2">Service Website</h3>
                 <p className="small mb-3">Dental Clinic Redesign</p>
@@ -36,10 +36,9 @@ function CaseStudies() {
 
           <div className="col-md-6 col-lg-3 mb-4 reveal reveal-delay-1">
             <div className="project-card">
-              <img
-                src={`${import.meta.env.BASE_URL}soon-svg.svg`}
-                alt="Interactive Game"
-              />
+              <div className="project-preview interactive-game">
+                <i className="bi bi-controller project-icon"></i>
+              </div>
               <div className="project-content">
                 <h3 className="h5 mb-2">Interactive Game</h3>
                 <p className="small mb-3">Web-Based Experience</p>
@@ -52,10 +51,9 @@ function CaseStudies() {
 
           <div className="col-md-6 col-lg-3 mb-4 reveal reveal-delay-2">
             <div className="project-card">
-              <img
-                src={`${import.meta.env.BASE_URL}soon-svg.svg`}
-                alt="E-Commerce Platform"
-              />
+              <div className="project-preview ecommerce">
+                <i className="bi bi-cart3 project-icon"></i>
+              </div>
               <div className="project-content">
                 <h3 className="h5 mb-2">E-Commerce</h3>
                 <p className="small mb-3">Shopping Experience</p>
@@ -71,10 +69,9 @@ function CaseStudies() {
 
           <div className="col-md-6 col-lg-3 mb-4 reveal reveal-delay-3">
             <div className="project-card">
-              <img
-                src={`${import.meta.env.BASE_URL}soon-svg.svg`}
-                alt="Analytics Dashboard"
-              />
+              <div className="project-preview analytics">
+                <i className="bi bi-bar-chart project-icon"></i>
+              </div>
               <div className="project-content">
                 <h3 className="h5 mb-2">Analytics Dashboard</h3>
                 <p className="small mb-3">Data Visualization</p>
@@ -109,12 +106,47 @@ function CaseStudies() {
                   API.
                 </p>
 
-                <div className="mb-4">
-                  <span className="skill-badge">Laravel</span>
-                  <span className="skill-badge">React</span>
-                  <span className="skill-badge">TypeScript</span>
-                  <span className="skill-badge">Inertia.js</span>
-                  <span className="skill-badge">Tailwind CSS</span>
+                <div className="mb-4 flex">
+                  <span className="skill-badge">
+                    <img
+                      src="https://cdn.worldvectorlogo.com/logos/laravel-2.svg"
+                      alt="Laravel"
+                      className="tech-icon me-1"
+                    />
+                    Laravel
+                  </span>
+                  <span className="skill-badge">
+                    <img
+                      src="https://avatars.githubusercontent.com/u/47703742?s=200&v=4"
+                      alt="Inertia.js"
+                      className="tech-icon me-1"
+                    />
+                    Inertia.js
+                  </span>
+                  <span className="skill-badge">
+                    <img
+                      src="https://cdn.worldvectorlogo.com/logos/react-2.svg"
+                      alt="React"
+                      className="tech-icon me-1"
+                    />
+                    React
+                  </span>
+                  <span className="skill-badge">
+                    <img
+                      src="https://cdn.worldvectorlogo.com/logos/typescript.svg"
+                      alt="React"
+                      className="tech-icon me-1"
+                    />
+                    TypeScript
+                  </span>
+                  <span className="skill-badge">
+                    <img
+                      src="https://cdn.worldvectorlogo.com/logos/tailwindcss.svg"
+                      alt="Tailwind CSS"
+                      className="tech-icon me-1"
+                    />
+                    Tailwind CSS
+                  </span>
                 </div>
 
                 <div className="d-flex gap-3">

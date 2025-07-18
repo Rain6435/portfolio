@@ -1,4 +1,3 @@
-import { Link } from "@tanstack/react-router";
 import { useEffect } from "react";
 import { GameProvider, useGame } from "../components/MemoryFlow/GameContext";
 import MainMenu from "../components/MemoryFlow/MainMenu";
@@ -55,11 +54,13 @@ function GamePage() {
   }, []);
 
   return (
-    <GameProvider>
-      <div className="game-page">
-        <GameContent />
-      </div>
-    </GameProvider>
+    <>
+      <GameProvider>
+        <div className="game-page">
+          <GameContent />
+        </div>
+      </GameProvider>
+    </>
   );
 }
 

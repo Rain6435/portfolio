@@ -13,7 +13,11 @@ function AnalyticsPage() {
     }
   }, [])
   
-  return <Dashboard />
+  return (
+    <>
+      <Dashboard />
+    </>
+  )
 }
 
 export default AnalyticsPage

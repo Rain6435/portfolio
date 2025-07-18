@@ -5,27 +5,17 @@ import Footer from "../components/Footer";
 import ScrollToTop from "../components/ScrollToTop";
 import ServiceSiteNavigation from "../pages/ServiceSite/ServiceSiteNavigation";
 import { ServiceSiteProvider } from "../pages/ServiceSite/ServiceSiteWrapper";
+import NavigationUtils from "../utils/navigation";
+import "./RootLayout.css";
 
 function RootLayout() {
   const location = useLocation();
 
-  // Check if current path is a ServiceSite route
-  const isServiceSiteRoute = location.pathname.startsWith(
-    "/portfolio/projects/service-site"
-  );
-
-
-  // Check if current path is the NotFound page (matches no known routes)
-  const isNotFoundPage = ![
-    "/",
-    "/projects/service-site",
-    "/projects/service-site/services",
-    "/projects/service-site/appointments",
-    "/projects/service-site/about",
-    "/projects/game",
-    "/projects/ecommerce",
-    "/projects/analytics",
-  ].includes(location.pathname);
+  // Use navigation utils for better route detection
+  const isServiceSiteRoute = NavigationUtils.isServiceSitePage(location.pathname);
+  const isHomePage = NavigationUtils.isHomePage(location.pathname);
+  const isProjectPage = NavigationUtils.isProjectPage(location.pathname);
+  const isNotFoundPage = NavigationUtils.isNotFoundPage(location.pathname);
 
   // Set up custom cursor across all pages
   useEffect(() => {
@@ -187,11 +177,9 @@ function RootLayout() {
         {isServiceSiteRoute ? (
           <ServiceSiteNavigation />
         ) : (
-          <Header 
-            isNotFoundPage={isNotFoundPage}
-            currentPath={location.pathname}
-          />
+          <Header />
         )}
+
 
         <main className="layout-main">
           <Outlet />

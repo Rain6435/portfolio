@@ -1,4 +1,3 @@
-import { Link } from "@tanstack/react-router";
 import { useEffect } from "react";
 import EcommercePage from "./Ecommerce/EcommercePage";
 
@@ -13,9 +12,11 @@ function EcommerceWrapper() {
   }, []);
 
   return (
-    <div className="ecommerce-wrapper">
-      <EcommercePage />
-    </div>
+    <>
+      <div className="ecommerce-wrapper">
+        <EcommercePage />
+      </div>
+    </>
   );
 }
 

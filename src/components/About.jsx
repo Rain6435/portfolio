@@ -1,4 +1,4 @@
-import './About.css';
+import "./About.css";
 
 function About() {
   return (
@@ -37,38 +37,43 @@ function About() {
                     Languages & Frameworks
                   </h4>
                   <div>
-                    <span className="skill-badge">
-                      <img
-                        src="https://cdn.worldvectorlogo.com/logos/laravel-2.svg"
-                        alt="Laravel"
-                        className="tech-icon me-1"
-                      />
-                      PHP/Laravel
-                    </span>
-                    <span className="skill-badge">
-                      <img
-                        src="https://cdn.worldvectorlogo.com/logos/python-5.svg"
-                        alt="Python"
-                        className="tech-icon me-1"
-                      />
-                      Python/Flask
-                    </span>
-                    <span className="skill-badge">
-                      <img
-                        src="https://cdn.worldvectorlogo.com/logos/react-2.svg"
-                        alt="React"
-                        className="tech-icon me-1"
-                      />
-                      TypeScript/React
-                    </span>
-                    <span className="skill-badge">
-                      <img
-                        src="https://cdn.worldvectorlogo.com/logos/vue-9.svg"
-                        alt="Vue.js"
-                        className="tech-icon me-1"
-                      />
-                      Vue.js
-                    </span>
+                    <div className="flex flex-row mb-2">
+                      <span className="skill-badge">
+                        <img
+                          src="https://cdn.worldvectorlogo.com/logos/laravel-2.svg"
+                          alt="Laravel"
+                          className="tech-icon me-1"
+                        />
+                        PHP/Laravel
+                      </span>
+                      <span className="skill-badge">
+                        <img
+                          src="https://cdn.worldvectorlogo.com/logos/python-5.svg"
+                          alt="Python"
+                          className="tech-icon me-1"
+                        />
+                        Python/Flask
+                      </span>
+                    </div>
+
+                    <div className="flex flex-row mb-2">
+                      <span className="skill-badge">
+                        <img
+                          src="https://cdn.worldvectorlogo.com/logos/react-2.svg"
+                          alt="React"
+                          className="tech-icon me-1"
+                        />
+                        TypeScript/React
+                      </span>
+                      <span className="skill-badge">
+                        <img
+                          src="https://cdn.worldvectorlogo.com/logos/vue-9.svg"
+                          alt="Vue.js"
+                          className="tech-icon me-1"
+                        />
+                        Vue.js
+                      </span>
+                    </div>
                   </div>
                 </div>
 
@@ -76,7 +81,7 @@ function About() {
                   <h4 className="h6 text-uppercase text-muted mb-3">
                     Cloud & DevOps
                   </h4>
-                  <div>
+                  <div className="flex flex-row">
                     <span className="skill-badge">
                       <img
                         src="https://cdn.worldvectorlogo.com/logos/aws-2.svg"
@@ -108,7 +113,7 @@ function About() {
                   <h4 className="h6 text-uppercase text-muted mb-3">
                     Web Technologies
                   </h4>
-                  <div>
+                  <div className="flex flex-row">
                     <span className="skill-badge">
                       <img
                         src="https://avatars.githubusercontent.com/u/47703742?s=200&v=4"
@@ -140,7 +145,7 @@ function About() {
                   <h4 className="h6 text-uppercase text-muted mb-3">
                     Tools & Databases
                   </h4>
-                  <div>
+                  <div className="flex flex-row">
                     <span className="skill-badge">
                       <img
                         src="https://cdn.worldvectorlogo.com/logos/wordpress-icon-1.svg"

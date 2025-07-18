@@ -16,75 +16,144 @@ const rootRoute = new createRootRoute({
   component: RootLayout,
 });
 
-// Define routes
+// Define routes with metadata for better navigation handling
 const indexRoute = new createRoute({
   getParentRoute: () => rootRoute,
   path: "/",
   component: HomePage,
+  meta: {
+    title: "Portfolio",
+    type: "home"
+  }
+});
+
+// Projects parent route for better organization
+const projectsRoute = new createRoute({
+  getParentRoute: () => rootRoute,
+  path: "/projects",
+  meta: {
+    title: "Projects",
+    type: "projects"
+  }
 });
 
 // ServiceSite Routes
 const serviceSiteHomeRoute = new createRoute({
-  getParentRoute: () => rootRoute,
-  path: "/projects/service-site",
+  getParentRoute: () => projectsRoute,
+  path: "/service-site",
   component: ServiceSiteHomePage,
+  meta: {
+    title: "Service Website",
+    type: "service-site",
+    description: "Dental Clinic Redesign"
+  }
 });
 
 const serviceSiteServicesRoute = new createRoute({
-  getParentRoute: () => rootRoute,
-  path: "/projects/service-site/services",
+  getParentRoute: () => projectsRoute,
+  path: "/service-site/services",
   component: ServiceSiteServicesPage,
+  meta: {
+    title: "Services",
+    type: "service-site",
+    parent: "Service Website"
+  }
 });
 
 const serviceSiteAppointmentsRoute = new createRoute({
-  getParentRoute: () => rootRoute,
-  path: "/projects/service-site/appointments",
+  getParentRoute: () => projectsRoute,
+  path: "/service-site/appointments",
   component: ServiceSiteAppointmentsPage,
+  meta: {
+    title: "Appointments",
+    type: "service-site",
+    parent: "Service Website"
+  }
 });
 
 const serviceSiteAboutRoute = new createRoute({
-  getParentRoute: () => rootRoute,
-  path: "/projects/service-site/about",
+  getParentRoute: () => projectsRoute,
+  path: "/service-site/about",
   component: ServiceSiteAboutUsPage,
+  meta: {
+    title: "About Us",
+    type: "service-site",
+    parent: "Service Website"
+  }
 });
 
 // Other Project Routes
 const gameRoute = new createRoute({
-  getParentRoute: () => rootRoute,
-  path: "/projects/game",
+  getParentRoute: () => projectsRoute,
+  path: "/game",
   component: GamePage,
+  meta: {
+    title: "Interactive Game",
+    type: "project",
+    description: "Memory Flow Game"
+  }
 });
 
 const ecommerceRoute = new createRoute({
-  getParentRoute: () => rootRoute,
-  path: "/projects/ecommerce",
+  getParentRoute: () => projectsRoute,
+  path: "/ecommerce",
   component: EcommercePage,
+  meta: {
+    title: "E-Commerce Platform",
+    type: "project",
+    description: "Shopping Experience"
+  }
 });
 
 const analyticsRoute = new createRoute({
-  getParentRoute: () => rootRoute,
-  path: "/projects/analytics",
+  getParentRoute: () => projectsRoute,
+  path: "/analytics",
   component: AnalyticsPage,
+  meta: {
+    title: "Analytics Dashboard",
+    type: "project",
+    description: "Food Price Analysis"
+  }
 });
 
 const notFoundRoute = new createRoute({
   getParentRoute: () => rootRoute,
   path: "*",
   component: NotFoundPage,
+  meta: {
+    title: "Page Not Found",
+    type: "error"
+  }
 });
 
 // Create the router with all routes
 const routeTree = rootRoute.addChildren([
   indexRoute,
-  serviceSiteHomeRoute,
-  serviceSiteServicesRoute,
-  serviceSiteAppointmentsRoute,
-  serviceSiteAboutRoute,
-  gameRoute,
-  ecommerceRoute,
-  analyticsRoute,
+  projectsRoute.addChildren([
+    serviceSiteHomeRoute,
+    serviceSiteServicesRoute,
+    serviceSiteAppointmentsRoute,
+    serviceSiteAboutRoute,
+    gameRoute,
+    ecommerceRoute,
+    analyticsRoute,
+  ]),
   notFoundRoute,
 ]);
+
+// Route configuration for easier access
+export const routeConfig = {
+  home: "/",
+  projects: {
+    serviceSite: "/projects/service-site",
+    serviceSiteServices: "/projects/service-site/services", 
+    serviceSiteAppointments: "/projects/service-site/appointments",
+    serviceSiteAbout: "/projects/service-site/about",
+    game: "/projects/game",
+    ecommerce: "/projects/ecommerce",
+    analytics: "/projects/analytics"
+  }
+};
 
 // Create and export the router
 export const router = new Router({
